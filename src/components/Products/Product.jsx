@@ -6,7 +6,7 @@ import { addProduct } from '../../redux/cart/actions';
 function Product() {
     const products = useSelector(state => state.products.list);
     const dispatch = useDispatch();
-
+    console.log(products);
     const addItemToCart =(product)=>{
         console.log(product);
         const id= product.id;
@@ -25,8 +25,8 @@ function Product() {
         <div className='products wrapper'>
             <h3 className='title-products'>List product</h3>
             <div className="list-product">
-                {products.length >0 ? products.map((product) =>(
-                    <div key={product.id} className="product-item">
+                {products.length >0 ? products.map((product, index) =>(
+                    <div key={index} className="product-item">
                         <div className='product-image'>
                             <Link to={`/products/${product.id}`}>
                                 <img src={product.fields.image[0].url} alt={product.name}/>

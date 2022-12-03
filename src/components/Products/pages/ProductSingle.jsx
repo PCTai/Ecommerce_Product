@@ -5,11 +5,10 @@ import "./ProductSingle.css";
 function ProductSingle() {
   const params = useParams();
   const products = useSelector(state => state.products.list);
-  console.log(products);
   const product = products.find((product) => {
-    return (product.id = params.id);
+    return (product.id === params.id);
   });
-  console.log(product);
+  console.log(products,product);
   return (
     <div className="product-single wrapper feature">
       {product && <div key={product.id} className="product-container">
@@ -23,6 +22,11 @@ function ProductSingle() {
             </h3>
             <p className="product-desc">{product.fields.decription}</p>
             <p className="product-price">{product.fields.price}$</p>
+            <div className="product-colors">
+              { product.fields.colors.map((item, index) =>(
+                <div className={`product-color `} style={{background: `${item}` }}></div>
+              ) )}
+            </div>
           </div>
           <div className="product-handle">
             <button className="btn-buy btn" data-id={product.id}>
