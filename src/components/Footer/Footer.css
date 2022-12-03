@@ -1,0 +1,47 @@
+.footer,.contact,.social, .footer-text{
+    display: flex;
+}
+.wrapper-footer{
+    background-color: #666;
+    padding: 3rem 0;
+}
+.footer{
+    margin: 0 auto;
+    flex-direction: column;
+}
+.contact{
+    justify-content: center;
+    margin: 0 0 2rem;
+}
+.contact-item{
+    margin: 0 2rem;
+    font-size: 16px;
+}
+.social{
+    justify-content: center;
+}
+.social a{
+    text-decoration: none;
+    color: #000;
+}
+.social i{
+    font-size: 24px;
+    margin: 0 2rem;
+}
+.footer-text{
+    justify-content: center;
+    margin-top: 0.5rem;
+
+}
+.footer-text span{
+    margin: 0 1rem;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+.design{
+    margin-top: 1rem;
+    text-align: center;
+    font-style: oblique;
+    font-weight: 500;
+    color: #333;
+}
