@@ -1,5 +1,5 @@
 
-import {ADD_PRODUCT, DELETE_PRODUCT, SET_PRODUCT} from './constants';
+import {ADD_PRODUCT, CHECKOUT, DELETE_PRODUCT, SET_PRODUCT} from './constants';
 
 const uptoCartLocalStorage=(cart) =>{
     localStorage.setItem('cart', JSON.stringify(cart));
@@ -59,6 +59,9 @@ const cart = (state= initState, action)=>{
             uptoCartLocalStorage(newState);
 
             return newState;
+        }
+        case CHECKOUT :{
+            return [];
         }
         default:
             return state;

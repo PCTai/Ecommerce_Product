@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { selectItemsCart, totalCart } from "../../redux/cart";
 import "./Cart.css";
-import { deleteProduct, setProduct } from '../../redux/cart/actions'
+import { checkout, deleteProduct, setProduct } from '../../redux/cart/actions'
 
 function Cart() {
   const cart = useSelector(selectItemsCart);
@@ -25,6 +25,9 @@ function Cart() {
   const handleDeleteItemCart = (id) => {
 
     dispatch(deleteProduct({ id }));
+  }
+  const handleCheckout  =() =>{
+    dispatch(checkout());
   }
   return (
     <div className="cart feature wrapper">
@@ -67,7 +70,7 @@ function Cart() {
           Total : {total}$
         </h4>
         <div className="cart-pay">
-          <button className="btn cart-payment">Payment</button>
+          <button onClick={handleCheckout} className="btn cart-payment">Payment</button>
         </div>
       </div>
     </div>

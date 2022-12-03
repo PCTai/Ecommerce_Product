@@ -1,4 +1,4 @@
-import { ADD_PRODUCT, DELETE_PRODUCT, SET_PRODUCT } from "./constants"
+import { ADD_PRODUCT, CHECKOUT, DELETE_PRODUCT, SET_PRODUCT } from "./constants"
 
 const addProduct= (payload) =>{
     return {
@@ -18,5 +18,11 @@ const deleteProduct= (payload) =>{
         payload
     }
 }
+const checkout= (payload) =>{
+    return {
+        type: CHECKOUT,
+        payload
+    }
+}
 
-export {addProduct,setProduct, deleteProduct }
+export {addProduct,setProduct, deleteProduct, checkout }
